@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-cale=1.0">
+    <title>Current Date</title>
+</head>
+<body>
+<h1>Current date in dd/mm/yy form.</h1>
+<p id=date></p>
+
+<script type="text/javascript">
+    function showDate() {
+        var today = new Date();
+        var day = today.getDay();
+        var month = today.getMonth() + 1;
+        var year = today.getFullYear();
+        if (day < 10) {
+            day = "0" + day;
+        }
+        if (month < 10) {
+            month = "0" + month;
+        }
+        var date = day + "/" + month + "/" + year;
+
+        return date;
+    }
+
+
+    document.getElementById("date").innerHTML = showDate();
+</script>
+</body>
+</html>
