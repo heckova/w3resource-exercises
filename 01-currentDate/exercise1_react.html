@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Current date static</title>
+</head>
+<body>
+
+<!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
+<div id="app">React has not rendered yet</div>
+
+<!-- JAVASCRIPT -->
+<script type="text/babel">
+
+    class CurrentDate extends React.Component {
+
+
+        constructor(props) {
+            super(props);
+            var today = new Date();
+            var day = today.getDay();
+            var daysInWeek = ["Sunday", "Monday", "Tuesday",
+                "Wednesday", "Thursday", "Friday", "Saturday"];
+            var hour = today.getHours();
+            var minutes = today.getMinutes();
+            var seconds = today.getSeconds();
+            var ampm = ampm();
+
+
+            function ampm() {
+                var result;
+                if (hour < 12) {
+                    result = "AM";
+                }
+                else if (hour > 12) {
+                    result = "PM";
+                    hour = hour - 12;
+                }
+                else if (hour === 12) {
+                    result = "";
+                }
+                return result;
+            }
+
+            this.state = {
+                day: daysInWeek[day],
+                hour: hour,
+                ampm: ampm,
+                minutes: minutes,
+                seconds: seconds
+            };
+
+        }
+
+        render() {
+
+            var currentDateStyle = {
+                width: 300,
+                height: 100,
+                backgroundColor: "#FFF",
+                boxShadow: "0px 0px 5px #555",
+                textAlign: "center"
+            };
+
+            return (
+                    <div style={currentDateStyle}>
+                        <h1>Current Date</h1>
+                        <p>Today is: {this.state.day}<br/>
+                            Current time is: {this.state.hour} {this.state.ampm} : {this.state.minutes}
+                            : {this.state.seconds}</p>
+                    </div>
+            );
+        }
+    }
+
+    ReactDOM.render(
+            <CurrentDate/>,
+        document.getElementById("app")
+    );
+</script>
+
+</body>
+</html>

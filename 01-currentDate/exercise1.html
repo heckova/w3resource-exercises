@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Exercises</title>
+</head>
+
+
+<body>
+<h1>Hello World.<br/>
+    (as usual)</h1>
+
+
+<div id="app"></div>
+<script>
+
+    function writeDate() {
+        var today = new Date();
+        var day = today.getDay();
+        var daysInWeek = ["Sunday", "Monday", "Tuesday",
+            "Wednesday", "Thursday", "Friday", "Saturday"];
+        var hour = today.getHours();
+        var minutes = today.getMinutes();
+        var seconds = today.getSeconds();
+        var firstLine = "Today is: " + daysInWeek[day];
+        var secondLine = "Current time is: " + hour + " " + ampm() + " : " +
+            minutes + " : " + seconds;
+
+        function ampm() {
+            var result;
+            if (hour < 12) {
+                result = "AM";
+            }
+            else if (hour > 12) {
+                result = "PM";
+            }
+            else if (hour === 12) {
+                result = "";
+            }
+            return result;
+        }
+
+        return document.getElementById("app").innerHTML = firstLine + "<br/>" + secondLine;
+    }
+
+
+    writeDate();
+
+</script>
+
+
+</body>
+</html>
