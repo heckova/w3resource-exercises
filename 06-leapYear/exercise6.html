@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap year</title>
+</head>
+<body>
+<h1>Is This year leap?</h1>
+<!-- <form> -->
+<label>
+    Year:
+    <input type="text" id="yearGuess"/>
+</label>
+<button type="submit" value="Submit" onclick="leapYear()">Submit</button>
+<p id="answer">hatatitla</p>
+<!-- </form> -->
+
+
+<script>
+    function leapYear() {
+        var year = document.getElementById("yearGuess").value;
+        var answer = document.getElementById("answer");
+
+        if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
+            answer.innerHTML = "Year" + year + " is an leap year.";
+        }
+        else {
+            answer.innerHTML = "Year" + year + " is NOT leap year.";
+        }
+    }
+
+</script>
+
+</body>
+</html>
