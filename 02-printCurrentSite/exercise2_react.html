@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Print Current Page</title>
+</head>
+<body>
+
+<div id="app">React has not rendered yet
+</div>
+<!-- JAVASCRIPT -->
+<script type="text/babel">
+
+
+    var Hello = function () {
+
+        function printing() {
+            window.print();
+        }
+
+        return (
+                <div>
+                    <h1>Hello World</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae convallis orci,
+                        vitae lobortis erat. Sed maximus nisi a ligula venenatis rutrum. Sed interdum urna et
+                        finibus aliquet. Donec non congue tortor. Sed pulvinar nibh sed dignissim venenatis.
+                        Vivamus tincidunt, enim quis hendrerit ultrices, eros nunc efficitur erat, consequat
+                        laoreet erat velit at orci. Cras maximus sapien id mauris tempus, vehicula viverra lorem
+                        ultrices. Nam ullamcorper, tortor id tincidunt gravida, nunc lorem commodo felis, vel
+                        sagittis nibh nisl vel urna. Aliquam dapibus tempus efficitur. Sed mi risus, vehicula
+                        sit amet tempus id, ultrices non dui. Fusce mattis aliquet urna, vitae pharetra nulla
+                        sollicitudin sit amet. Praesent diam nibh, tristique nec magna eu, hendrerit elementum
+                        mi.
+
+                        Nunc aliquam in odio at consequat. Pellentesque convallis quam vitae gravida venenatis.
+                        Nulla accumsan sem fermentum bibendum volutpat. Class aptent taciti sociosqu ad litora
+                        torquent per conubia nostra, per inceptos himenaeos. Quisque cursus vitae est ac ornare.
+                        Cras varius facilisis orci, non pretium eros pretium egestas. Sed semper id arcu sed
+                        egestas.
+
+                        Praesent et velit diam. Nam at justo scelerisque, pretium dui et, tempus nunc. Nunc
+                        condimentum consequat dolor non elementum. Sed imperdiet, dolor eget condimentum
+                        finibus, enim ex vestibulum sapien, at ultricies ligula eros sit amet leo. Sed tellus
+                        velit, venenatis elementum risus et, elementum ultrices felis. Morbi sodales ipsum vitae
+                        ex efficitur dictum. Ut pharetra libero id nisi elementum, ac interdum purus ultricies.
+                        Pellentesque egestas tempor tellus quis mollis. Sed accumsan arcu tincidunt tellus
+                        vehicula, vel congue mauris sodales. Pellentesque tempus leo eu congue convallis. Orci
+                        varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        Vestibulum non lectus enim.</p>
+                    <button onClick={printing}>Print</button>
+                </div>
+        );
+    }
+
+    ReactDOM.render(
+            <Hello/>,
+        document.getElementById("app")
+    );
+</script>
+
+</body>
+</html>
