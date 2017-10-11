@@ -6,8 +6,37 @@
 </head>
 <body>
 <h1>Is first day in the year Saturday?</h1>
+<div id="yearsStartingOnSunday"></div>
+<div id="yearsNotStarting"></div>
 <script>
+    function firstDayInYear() {
+        var day = new Date();
+        for (var n = 2014; n < 2050; n++) {
+            day.setFullYear(n);
+            day.setMonth(0);
+            day.setDate(1);
 
+            var firstDayInJanuary = day.setFullYear(n, 0, 1);
+            if (day.getDay() === 0) {
+                var para = document.createElement("p");
+                var node = document.createTextNode("Year " + n + " starts with Sunday");
+                para.appendChild(node);
+                var element = document.getElementById("yearsStartingOnSunday");
+                element.appendChild(para);
+
+            }
+            else {
+                var para = document.createElement("p");
+                var node = document.createTextNode("Year " + n + " don't starts with Sunday");
+                para.appendChild(node);
+                var element = document.getElementById("yearsNotStarting");
+                element.appendChild(para);
+
+            }
+        }
+    }
+
+    firstDayInYear();
 </script>
 </body>
 </html>
