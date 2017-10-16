@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+
+<h1>Temperature</h1>
+<div>
+    <label>From Celsius to Fahrenheit<input type="number" id="cels"/></label>
+    <button type="submit" id="submitCels" onclick="onClickCelsius()">Submit</button>
+    <br/>
+    <label>From Fahrenheit to Celsius<input type="number" id="fahr"/></label>
+    <button type="submit" id="submitFahr" onclick="onClickFahr()">Submit</button>
+</div>
+
+<script>
+
+
+    function onClickCelsius() {
+        let celsInput = document.getElementById("cels").value;
+        toFahrenheit(celsInput);
+        hovno();
+    }
+
+    function hovno() {
+        fetch("https://api.coinmarketcap.com/v1/ticker/")
+            .then(function (response) {
+                console.log(response);
+            })
+            .then(response => {
+                console.log(response);
+            });
+    }
+
+    function onClickFahr() {
+        let fahrInput = document.getElementById("fahr").value;
+        toCelsius(fahrInput);
+    }
+
+    function toFahrenheit(c) {
+        degrees = (1.8 * c) + 32;
+        console.log(`${c} Celsius degrees is ${degrees} degrees Fahrenheit`);
+    }
+
+    function toCelsius(f) {
+        degrees = (f - 32) / 1.8;
+        console.log(`${f} Fahrenheit degrees is ${degrees} degrees Celsius`);
+    }
+
+    //    toFahrenheit(15);
+    //    toCelsius(59);
+
+
+</script>
+
+</body>
+</html>
