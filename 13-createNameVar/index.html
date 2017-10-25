@@ -8,8 +8,21 @@
 <h1> Write you name</h1>
 <div>
     <label for="name">Name:</label>
-    <input type="text" id="name">
-    <input type="submit" value="Submit">
+    <input type="text" id="name" onkeypress="">
+    <input type="submit" value="Submit" onclick="createNameVar()">
 </div>
+<div id="writeName"></div>
+
+<script>
+    function createNameVar() {
+        userName = document.getElementById("name").value;
+        let para = document.createElement("p");
+        let node = document.createTextNode(`Hi ${userName}.`);
+        para.appendChild(node);
+
+        let element = document.getElementById("writeName");
+        element.appendChild(para);
+    }
+</script>
 </body>
 </html>
