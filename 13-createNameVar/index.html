@@ -8,7 +8,7 @@
 <h1> Write you name</h1>
 <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" onkeypress="">
+    <input type="text" id="name">
     <input type="submit" value="Submit" onclick="createNameVar()">
 </div>
 <div id="writeName"></div>
@@ -22,7 +22,19 @@
 
         let element = document.getElementById("writeName");
         element.appendChild(para);
+
+        const name = document.getElementById("name").value;
+        const str = `${name} = "I am new variable."`;
+        eval(str);
     }
+
+    document.getElementById("name").onkeydown = function (event) {
+        if (event.keyCode == 13) {
+            createNameVar();
+        }
+    }
+
+
 </script>
 </body>
 </html>
