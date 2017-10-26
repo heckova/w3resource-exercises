@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File name extension</title>
+</head>
+<body>
+<h1>Write file extension</h1>
+<p>File names:</p>
+<p id="file1">hovno.php</p><br>
+<p id="file2">cecky.js</p>
+
+<script>
+    filename = document.getElementById("file1").innerHTML;
+    console.log(filename.split('.').pop());
+    filename = document.getElementById("file2").innerHTML;
+    console.log(filename.split('.').pop());
+</script>
+</body>
+</html>
