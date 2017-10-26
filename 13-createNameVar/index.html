@@ -7,9 +7,9 @@
 <body>
 <h1> Write you name</h1>
 <div>
-    <label for="name">Name your variable:
-        <p>Please name your variable by JavaScript rules about naming variables otherwise error may occur.</p>
-    </label>
+    <label for="name">Name your variable:<br>
+        Please name your variable by JavaScript rules about naming variables otherwise error may occur.
+    </label><br>
     <input type="text" id="name">
     <input type="submit" value="Submit" onclick="createNameVar()">
 </div>
@@ -26,7 +26,7 @@
         element.appendChild(para);
 
         const name = document.getElementById("name").value;
-        const str = `${name} = "I am new variable."`;
+        const str = `${name} = {"I am new variable.", do:"programming"}`;
         eval(str);
     }
 
